@@ -31,7 +31,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import baseUrl from '../utils/Service';
 import  io  from 'socket.io-client';
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
-const socket =  io.connect('http://localhost:9000')
+const socket =  io.connect('https://futrolearnacademy-server.onrender.com')
 function HomeHeader(){
   const{ToggleTheme,theme}=React.useContext(ThemeContext)  
    const{User,Logout,UserProfile}=React.useContext(AuthContext)
