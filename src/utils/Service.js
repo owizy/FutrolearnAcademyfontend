@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:5000"
+const baseUrl = "https://futrolearnacademy-server.onrender.com"
 export default baseUrl
  
 export const PostRequest =async(url,bodys)=>{
