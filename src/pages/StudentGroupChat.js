@@ -8,7 +8,7 @@ import { AuthContext } from '../context/AuthContext';
 import SendIcon from '@mui/icons-material/Send';
 import  {io } from 'socket.io-client';
 import moment from 'moment';
-const socket =  io('http://localhost:9000')
+const socket =  io('https://futrolearnacademy-server.onrender.com')
 function StudentGroupChat(){
     const navigate =useNavigate()
     const[message,Setmessage]=useState([])
