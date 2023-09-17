@@ -1,0 +1,460 @@
+.infocont{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.bans{
+    width: 100%;
+    height: 450px;
+    background-image: url('../image7/830dc9956ba4f41f54fa2e5ac57dc54c.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start ;
+    padding: 50px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bans h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    color: #fff;
+}
+.bans p{
+    width: 600px;
+    word-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    color: #fff;
+}
+.bans button{
+    width: 200px;
+    padding: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+}
+.bans button:hover{
+    background-color: #fff;
+    color: #000;
+    border: none;
+    transition: all;
+}
+.bans1{
+    width: 100%;
+    margin-top: 50px;
+    height: 450px;
+    background-image: url('../image7/830dc9956ba4f41f54fa2e5ac57dc54c.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start ;
+    padding: 50px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bans1 h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    color: #fff;
+}
+.bans1  p{
+    width: 600px;
+    word-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    color: #fff;
+}
+.bans1    button{
+    width: 200px;
+    padding: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color:black;
+    color: #fff;
+    border-radius: 20px;
+}
+.bans1 button:hover{
+    background-color: #fff;
+    color: #000;
+    border: none;
+    transition: all;
+}
+.courseinfocont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.courseinfocont  span{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+.learncontss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.learncontss h3{
+    margin: 10px;
+    color: #8BB1A9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+}
+.learncontss h3:hover{
+    border-bottom: 1px solid #8BB1A9;
+}
+
+
+.infons{
+    width: 300px;
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition: transform 0.3s, box-shadow 0.3s;
+   padding: 10px;
+   border-radius: 20px;
+}
+.infons:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.infons h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+.infons p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+.learncontss1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.learncontss2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.learncontss2 .infons1{
+    width: 50%;
+    margin-bottom: 20px;
+}
+.coursevideo{
+   width: 600px;
+    height: 300px;
+    margin-top: 10px;
+}
+.lexc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    width: 100%;
+}
+
+.lexc h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+.directcont{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+.direct{
+    margin: 30px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+}
+.directcont span{
+    margin: 30px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+}
+.desmcont{
+    display: flex;
+    padding: 10px 20px;
+    gap: 20px;
+}
+.desmcont img{
+    width: 600px;
+    border-radius: 20px;
+    height: 250px;
+}
+.demcontdetails{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.demcontdetails h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+.demcontdetails p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 15px 0px;
+}
+.demcontdetails h4{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+.addto{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.addto button{
+    width: 40%;
+    padding: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+}
+.addto button:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.getcertcont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.reasoncertificate{
+    width: 100%;
+    padding-top: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reason1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.reason1 h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.reason1 p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.reason1 h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.reason1 li{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 5px 0px;
+}
+.examss{
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.examss1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.examss1 h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+}
+.examss1 li{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    padding: 10px 0px;
+}
+.productsss{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+.productsss h1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: 400;
+   font-size: 25px;
+   margin-top: 20px;
+   margin-bottom: 50px;  
+}
+.productsssconts{
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 50px;
+}
+.productsssconts::-webkit-scrollbar{
+    display: none;
+}
+@media(max-width:450px){
+  .bans{
+    padding: 15px;
+  } 
+    .bans h1{
+        font-size: 35px;
+    }
+    .bans p{
+        width: 320px;
+    }
+    .bans1 p{
+        width: 320px;
+    }
+    .courseinfocont  span{
+        font-size: 30px;
+       }
+       .learncontss2 .infons1{
+        flex: 1;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 5px;
+    }
+    .coursevideo{
+        width: 100%;
+         height: 250px;
+         margin-top: 10px;
+     }
+    .desmcont{
+        display: flex;
+        flex-direction: column;
+    }
+    .desmcont img{
+        width: 90%;
+    } 
+    .addto button{
+        width: 60%;
+    }
+    .reasoncertificate{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        padding: 10px !important;
+    }
+    .reasonimg{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .reasoncertificate img{
+        width: 90%;
+    }
+    .reason1 h1{
+        font-size: 25px;
+        margin-top: 20px;
+    }
+    .reason1 h2{
+        font-size: 25px;
+    }
+    .examss{
+        padding-top: 50px;
+    }
+    .examss1 h1{
+        font-size: 25px;
+    }
+    .examss1 li{
+        font-size: 17px;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+}
+@media(max-width:370px){
+.bans{
+    padding: 10px;
+}
+.bans p{
+    width: 290px;
+}
+.bans1 p{
+    width: 290px;
+}
+.bans h1{
+    font-size: 32px;
+}
+
+}
+@media(max-width:330px){
+    .directcont{
+        padding-left: 5px;
+    }
+    .examss{
+        padding-left: 20px;
+    }
+}

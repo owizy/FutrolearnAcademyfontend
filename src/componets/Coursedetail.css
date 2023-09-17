@@ -1,0 +1,335 @@
+.coursedetailcont{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px  20px 10px 10px;
+    box-shadow: 3px 3px 2px 0px rgba(51, 51, 51, 0.5);
+}
+.coursedetailcont .coimg{
+    width: 250px;
+    height: 160px;
+    border-radius: 20px  20px 0px 0px;
+}
+.coursep{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+     align-self: center;
+}
+.coursep:hover{
+    border-bottom: 1px solid #8BB1A9;
+    color: #8BB1A9;
+    cursor: pointer;
+}
+.detailst{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 5px;
+}
+.numberoflesson{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:"10px";
+}
+.nolearner{
+    display: flex;
+    gap: 5px;
+    align-items:"center";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:"10px";
+}
+.reviewno{
+    margin: 10px 0px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.numberofreviews{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.learner button{
+    background-color: #8BB1A9;
+    color: white;
+    outline: none;
+    border: none;
+    width: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
+.learner button:hover{
+    background-color: #838285;
+    color: #000;
+}
+
+/* for hcondetails */
+.startlearning{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.startlearning button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #8BB1A9;
+    color: #fff;
+    cursor: pointer;
+}
+.startlearning button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+.getcertificated{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  padding-bottom: 40px;
+}
+.getcertificated button{
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #7556A4;
+    color: #fff;
+    cursor: pointer;
+}
+.getcertificated button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+.hcourses{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.hcourses h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+/* cart */
+.cartcont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.cartcont nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+.cartcont h1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.cartcont h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.cartcont small{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 550;
+}
+.cartdis{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    margin-bottom: 25px;
+}
+.dinfo{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.dinfo img{
+    width: 150px;
+    height: 100px;
+    border-radius: 15px;
+    border: 1px solid #000;
+}
+.dinfo span{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dinfo span h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+.dinfo span p{
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+.quant{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.quant h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+.numbtn{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.numbtn h5{
+   font-size: 15px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.numbtn button{
+   cursor: pointer;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   border: none;
+   align-items: center;
+   justify-content: center;
+}
+.numbtn button:hover{
+    background-color: #000;
+    color: #fff;
+}
+.checkbtn{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+.checkbtn button{
+    width: 30%;
+    padding: 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #7556A4;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 20px; 
+}
+.checkbtn button:hover{
+    background-color: #000;
+    color: #fff;
+}
+.empty{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    height: 50vh;
+}
+@media(max-width:750px){
+.coursedetailcont{
+    flex: 0.9;
+ }   
+.coursedetailcont .coimg{
+    width:325px;
+ }
+.cartdis{
+    padding: 10px;
+ }
+ .dinfo{
+    gap: 10px;
+ }
+ .dinfo img{
+    width: 140px;
+    height: 120px;
+    object-fit: fill;
+ }
+ .checkbtn button{
+    width: 60%;
+    margin-bottom: 50px;
+ }
+}
+
+@media(max-width:450px){
+.coursedetailcont .coimg{
+        width: 369px;
+    }
+    .coursedetailcont #otherimagess{
+        width: 200px !important;
+    }
+}
+@media(max-width:430px){
+.coursedetailcont .coimg{
+    width: 382px;
+}
+}
+@media(max-width:400px){
+.coursedetailcont .coimg{
+        width: 355px;
+    }
+    
+}
+@media(max-width:380px){
+   .coursedetailcont .coimg{
+     width: 336px;}
+}
+@media(max-width:370px){
+.coursedetailcont .coimg{
+    width: 325px;
+}    
+.dinfo span h3{
+    font-size: 17px;
+}
+}
+@media(max-width:330px){
+   .coursedetailcont .coimg{
+    width: 292px;
+   } 
+
+.dinfo img{
+    width: 120px;
+}   
+.dinfo h3{
+    font-size: 12px;
+}
+.numbtn{
+    gap: 10px;
+}
+}

@@ -1,0 +1,218 @@
+.studentconts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.studentheader{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    gap: 10px;
+    background-color: #EFF0F5;
+    margin-bottom: 20px;
+}
+.studentheader span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #617099;
+    width: 20%;
+}
+.usercont{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.usercont div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #617099;
+    width: 20%;
+}
+.mails{
+    color: #2879C9;
+}
+
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+.bacl  .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    background-color: #000 !important;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+  }
+  
+  .dot:nth-child(1) {
+    animation-delay: -0.32s;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: -0.16s;
+  }
+  .adminmessheader{
+    width: 100%;
+    height: 70px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .messageconts{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #2E1C49 !important;
+  }
+  .mess1per{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .messpersons{
+    padding-left: 30px;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    gap: 70px;
+    background-color: #2E1C49;
+    cursor: pointer;
+    padding-top: 15px;
+  }
+  .messpersons p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  text-transform: capitalize;
+  color: #fff;
+  }
+   
+  .chatcontainers1{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 320px;
+    border: none;
+    background-color: #2E1C49;
+}
+  .chatbox1{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 230px;
+     margin-top: 20px;
+    border-radius: 5px;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+.chatbox::-webkit-scrollbar{
+    appearance: none;
+    width: 10px;
+    height: 4px;     
+}
+
+.chatbox::-webkit-scrollbar-thumb{
+    background-color:#000;
+    border-radius: 1px
+}
+.chatinnput1{
+    
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 25px;
+    gap: 15px;
+    margin: 20px 0px;
+}
+.chatinnput1 button{
+background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    padding: 0px;
+}
+.chatinnput1 input{
+    width: 85%;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    border: 1px solid #fff;
+    outline: none;
+    border-radius: 3px;
+}
+.chatinnput1 input:focus{
+    border: 1px solid #000;
+}
+
+.messagecont{
+    max-width: 50%;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    margin: 10px;
+    word-break: break-all;
+}
+  @keyframes bounce {
+    0%, 100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+@media(max-width:450px){
+   .usercont .avatar{
+    display: none !important;
+   }
+   .usercont{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+   }
+   .studentheader{
+    display: flex;
+    justify-content: space-around;
+   }
+   .usercont div p{
+    font-size: 20px;
+   }
+   .piad p{
+    margin-right: 40px !important;
+   }
+   .email{
+    display: none;
+   }
+   .mails{
+    display: none;
+   }
+   .chatcontainers1{
+    flex: 1;
+    width: 95%;
+   }
+}

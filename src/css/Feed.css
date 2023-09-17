@@ -1,0 +1,79 @@
+.feedbackcont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.feedbackcont h1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+.feedbackcont form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.feedbackcont input{
+    width: 60%;
+    padding: 10px;
+    margin:20px 0px ;
+}
+.feedbackcont textarea{
+    margin: 10px 0px;
+    width: 60%;
+    padding: 10px;
+}
+.feedbackcont button{
+    margin-top: 15px;
+}
+
+@media(max-width:450px){
+    .feedbackcont input{
+        width: 50vh;
+        border: 1px solid #000;
+    }
+    .feedbackcont textarea{
+        width: 50vh;
+        border: 1px solid #000;
+    }
+    .feedbackcont form button{
+        width: 50vh ;
+    }
+}
+@media(max-width:370px){
+    .feedbackcont input{
+        width: 45vh;
+    }
+    .feedbackcont textarea{
+        width: 45vh;
+    }
+    .feedbackcont form button{
+        width: 40vh !important;
+    } 
+}
+@media(max-width:330px){
+    .feedbackcont input{
+        width: 65vh;
+    }
+    .feedbackcont{
+        height: 110vh;
+    }
+    .feedbackcont h1{
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .feedbackcont textarea{
+        width: 65vh;
+    }
+}
