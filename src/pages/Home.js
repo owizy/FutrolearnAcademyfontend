@@ -24,7 +24,7 @@ function Displaychat(){
   return show
  }
 }
-const socket =  io('https://futrolearnacademy-server.onrender.com')
+const socket =  io("https://futrolearnacademy-server.onrender.com")
 function Home() {
   const[featured]=useState(feature)
   const messageRef = useRef(null)
