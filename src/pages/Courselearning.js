@@ -44,7 +44,7 @@ useEffect(()=>{
 
 
 // local port 
-const ClientUrl=`https://futrolearnacademy-4wjr.onrender.com/${items.length !==0 ? items.newitem.downloadcourse :''}`
+const ClientUrl=`https://futrolearnacademy.onrender.com/${items.length !==0 ? items.newitem.downloadcourse :''}`
 const Download=(url)=>{
         fetch(url).then(response=>response.blob()).then(blob =>{
             const blobURL = window.URL.createObjectURL(new Blob([blob]))
