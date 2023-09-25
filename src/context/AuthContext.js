@@ -116,7 +116,6 @@ export const AuthProvider =({children})=>{
       localStorage.removeItem("picture")
       localStorage.removeItem("conversation")
       SetUser(null)
-      window.location.reload();
     },[])
   
     useEffect(()=>{
