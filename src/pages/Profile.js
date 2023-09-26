@@ -55,6 +55,7 @@ function Profile() {
 };
  async function UPDATEfullname(){
     SetisLoadingUpadateFullname(true)
+   try{
     const response =await PostRequest(`${baseUrl}/user/${User?._id}/fullname`,UFullname)
     SetisLoadingUpadateFullname(false)
     if(response?.Error){
@@ -65,13 +66,16 @@ function Profile() {
   SetUser(response)
   SetUpdateError({messages:"Upate sucessfull"})
   SetUpadateFullname(false)
+   }catch(err){
+    SetUpdateError(err)
+   }
     SetUFullname('')
   }
  async function UPDATEemail(){
     SetisLoadingUpadateEmail(true)
 
 
-    const response= await PostRequest(`${baseUrl}/user/${User?._id}/email`,Uemail)
+ try{   const response= await PostRequest(`${baseUrl}/user/${User?._id}/email`,Uemail)
     SetisLoadingUpadateEmail(false)
     if(response?.Error){
    return     SetUpadateEmail(true),SetUpdateError(response)
@@ -82,22 +86,28 @@ function Profile() {
     SetUser(response)
 
   SetUpdateError({messages:"Update sucessfull"})
-  SetUpadateEmail(false)
+  SetUpadateEmail(false)}catch(err){
+    SetUpdateError(err)
+  }
     SetUemail('')
   }
 async  function UPDATEpassword(){
-    SetisLoadingtUpadatePassword(true)
-    const response= await PostRequest(`${baseUrl}/user/${User?._id}/password`,Upassword)
-    SetisLoadingtUpadatePassword(false)
-    if(response?.Error){
-   return   SetUpadatePassword(true),SetUpdateError(response)
+try{
+  SetisLoadingtUpadatePassword(true)
+  const response= await PostRequest(`${baseUrl}/user/${User?._id}/password`,Upassword)
+  SetisLoadingtUpadatePassword(false)
+  if(response?.Error){
+ return   SetUpadatePassword(true),SetUpdateError(response)
 
-  }
+}
 
-  localStorage.setItem("user",JSON.stringify(response))
-  SetUser(response)
-   SetUpdateError({messages:"Upate sucessfull"})
-  SetUpadatePassword(false)
+localStorage.setItem("user",JSON.stringify(response))
+SetUser(response)
+ SetUpdateError({messages:"Upate sucessfull"})
+SetUpadatePassword(false)
+}catch(err){
+ SetUpdateError(err)
+}
     SetUpassword('')
   }
 
@@ -109,7 +119,8 @@ async  function UPDATEpassword(){
 
     const formData = new FormData();
     formData.append("image", image);
-
+   try{
+    
     const response = await axios.post(
       `${baseUrl}/user/${User?._id}/profilepicture`,
       formData,
@@ -119,7 +130,7 @@ async  function UPDATEpassword(){
     )
   
 
-      //  const response =await PostRequest(`${baseUrl}/user/${User?._id}/profilepicture`,postImage)
+      //  const response =await PostRequest(`${baseUrl}/user/${User?._id}/profilepicture`,formData)
     
     
         if(response?.Error){
@@ -129,6 +140,10 @@ async  function UPDATEpassword(){
        SetisLoadingUpload(false)
        localStorage.setItem("picture",JSON.stringify(response))
        SetUserProfile( response)
+
+      }catch(err){
+        SetUpdateError(err)
+      }
   }
 
 
