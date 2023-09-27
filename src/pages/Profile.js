@@ -210,11 +210,11 @@ SetUpadatePassword(false)
     <div className='des1i' >
    
     <Avatar alt={User?.fullname}  src={`${baseUrl}/${UserProfile?.image ||UserProfile?.data?.image}`} sx={{cursor:"pointer",}} className='avatar' /> 
-   {!UserProfile && <form onSubmit={submitImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
+   {!UserProfile?.image   && <form onSubmit={submitImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
         <input type="file" accept="image/*" onChange={onInputChange}></input>
        {!isLoadingUpload && <button type="submit">Upload Image</button>}      </form>}
 
-       {UserProfile && <form onSubmit={UpadateImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
+       {UserProfile?.image && <form onSubmit={UpadateImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
         <input type="file" accept="image/*" onChange={onInputChange}></input>
        {!isLoadingUpload && <button type="submit">Update Image</button>}      </form>}
  <>
