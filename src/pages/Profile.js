@@ -11,6 +11,7 @@ import { ThemeContext } from '../context/ThemeContext';
 import baseUrl, { PostRequest } from '../utils/Service';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+
 function Profile() {
   const [image, setImage] = useState(null);
   const {activities ,removeActivities}=useContext(ActiviesContext)
@@ -235,7 +236,7 @@ SetUpadatePassword(false)
    
     <div className='deslii'>
       {!UpadeFullname && <label>Name:{User?.fullname} </label>}
-      {UpadeFullname &&   <label><input type='text' style={{border:"2px solid #000"}} onChange={(e)=>SetUFullname({...UFullname,fullname:e.target.value})} name='fullname'/> </label>}
+      {UpadeFullname &&   <label> <div onClick={()=>SetUpadateFullname(!UpadeFullname)} style={{cursor:"pointer"}}><CloseIcon/> </div><input type='text' style={{border:"2px solid #000"}} onChange={(e)=>SetUFullname({...UFullname,fullname:e.target.value})} name='fullname'/>   </label> }
      
      {!UpadeFullname &&   <button onClick={()=>{ return SetUpadateFullname(!UpadeFullname),SetUpadateEmail(false),SetUpadatePassword(false)}}>Update name</button> }
      {UpadeFullname &&   <>
@@ -253,7 +254,7 @@ SetUpadatePassword(false)
      </> }
     
      {!UpadeEmail && <label>Email:{User?.email}</label>}
-     {UpadeEmail && <label><input type='text' style={{border:"2px solid #000"}} name='email' onChange={(e)=>SetUemail({...Uemail,email:e.target.value})}/></label>}
+     {UpadeEmail && <label><div onClick={()=>SetUpadateEmail(!UpadeEmail)} style={{cursor:"pointer"}}><CloseIcon/> </div> <input type='text' style={{border:"2px solid #000"}} name='email' onChange={(e)=>SetUemail({...Uemail,email:e.target.value})}/></label>}
       
       {!UpadeEmail && <button onClick={()=>{return SetUpadateEmail(!UpadeEmail),SetUpadateFullname(false),SetUpadatePassword(false)}}>Update email</button>}
       {UpadeEmail && <>
@@ -272,7 +273,7 @@ SetUpadatePassword(false)
       </>}
      {!UpadePassword && <label>Password:********</label>}
      
-     {UpadePassword && <label><input type={!show ? "password":'text'} style={{border:"2px solid #000"}} name='password1' onChange={(e)=>SetUpassword({...Upassword,password1:e.target.value})}/></label>}
+     {UpadePassword && <label><div onClick={()=>SetUpadatePassword(!UpadePassword)} style={{cursor:"pointer"}}><CloseIcon/> </div> <input type={!show ? "password":'text'} style={{border:"2px solid #000"}} name='password1' onChange={(e)=>SetUpassword({...Upassword,password1:e.target.value})}/></label>}
      {UpadePassword &&<>
       <label><input type={!show ? "password":'text'} style={{border:"2px solid #000"}} name='password2'onChange={(e)=>SetUpassword({...Upassword,password2:e.target.value})}/></label>
             
