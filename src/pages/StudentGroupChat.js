@@ -35,7 +35,7 @@ function StudentGroupChat(){
               console.log("data",data)
 
 
-              console.log("message", message)
+              // console.log("message", message)
               // if(message.length === 0 ){
               //   Setmessage({messages:data.message,user:data.user})
               // }else {
