@@ -22,7 +22,7 @@ function AdminHeader({OpenSidebar}) {
     <div className='header-right' style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
         <BsFillBellFill className='icon'/>
         <BsFillEnvelopeFill className='icon'/>
-        <Avatar alt={User?.fullname}  src={`${baseUrl}/${  UserProfile?.image||UserProfile?.data?.image}`} sx={{cursor:"pointer",}} className='avatar' /> 
+        <Avatar alt={User?.fullname}  src={`${  UserProfile?.image||UserProfile?.data?.image}`} sx={{cursor:"pointer",}} className='avatar' /> 
     </div>
 </header>
 
