@@ -34,6 +34,7 @@ function Profile() {
   const[Uemail,SetUemail]=useState("")
        const[Upassword,SetUpassword]=useState("")
        const[UFullname,SetUFullname]=useState("")
+       const[isLoadingImage,SetisLoadingImage]= useState(false)
   function scrollToTop() {
     window.scrollTo(0, 0);
   }
@@ -117,11 +118,11 @@ SetUpadatePassword(false)
     
 
     e.preventDefault();
-
+ 
     const formData = new FormData();
     formData.append("image", image);
    try{
-    
+     SetisLoadingImage(true)   
     const response = await axios.post(
       `${baseUrl}/user/${User?._id}/profilepicture`,
       formData,
@@ -130,8 +131,8 @@ SetUpadatePassword(false)
       }
     )
   
-
       //  const response =await PostRequest(`${baseUrl}/user/${User?._id}/profilepicture`,formData)
+       console.log("response",response)
     
     
         if(response?.Error){
@@ -141,9 +142,11 @@ SetUpadatePassword(false)
        SetisLoadingUpload(false)
        localStorage.setItem("picture",JSON.stringify(response))
        SetUserProfile( response)
-
+       SetisLoadingImage(false)
       }catch(err){
         SetUpdateError(err)
+        SetisLoadingImage(false)   
+
       }
   }
 
@@ -156,13 +159,12 @@ SetUpadatePassword(false)
 
   const UpadateImage = async (e) =>{
     localStorage.getItem("picture")
-    
-
+   try{
     e.preventDefault();
-
+    
     const formData = new FormData();
     formData.append("image", image);
-
+    SetisLoadingImage(true)   
     const response = await axios.post(
       `${baseUrl}/user/update/${User?._id}/update`,
       formData,
@@ -180,7 +182,15 @@ SetUpadatePassword(false)
        SetisLoadingUpload(false)
        localStorage.setItem("picture",JSON.stringify(response))
        SetUserProfile( response)
-  }
+       SetisLoadingImage(false)   
+   }catch(err){
+     SetUpdateError(err)   
+     SetisLoadingImage(false)   
+ 
+   } 
+
+   
+      }
   
   const onInputChange = (e) => {
     console.log(e.target.files[0]);
@@ -190,12 +200,13 @@ SetUpadatePassword(false)
   const navigate =useNavigate()
   return (
   <section className='profiless' style={{backgroundColor:theme ==="light-theme" ? "whitesmoke" :"#1d2634 ", color:theme === "light-theme"? "#000" :"#fff"}}>
-      {UpdateError?.message &&  <Snackbar open={open} autoHideDuration={2000} onClose={handleClose} anchorOrigin={{vertical: 'top', horizontal: 'right'}} >
+      {UpdateError?.message &&  <Snackbar open={open} autoHideDuration={500} onClose={handleClose} anchorOrigin={{vertical: 'top', horizontal: 'right'}} >
         <Alert onClose={handleClose} severity={"error"} sx={{ width: '100%' }}>
          {UpdateError?.message}
         </Alert>
       </Snackbar>}
-      {UpdateError?.messages &&  <Snackbar open={open} autoHideDuration={2000} onClose={handleClose} anchorOrigin={{vertical: 'top', horizontal: 'right'}}>
+
+      {UpdateError?.messages &&  <Snackbar open={open} autoHideDuration={500} onClose={handleClose} anchorOrigin={{vertical: 'top', horizontal: 'right'}}>
         <Alert onClose={handleClose} severity={"success"} sx={{ width: '100%' }}>
          {UpdateError?.messages}
         </Alert>
@@ -209,14 +220,15 @@ SetUpadatePassword(false)
     <div className='dest1' style={{backgroundColor:theme ==="light-theme" ? "#fff" :"#000", color:theme === "light-theme"? "#000" :"#fff"}}>
     <div className='des1i' >
    
-    <Avatar alt={User?.fullname}  src={`${baseUrl}/${UserProfile?.image ||UserProfile?.data?.image}`} sx={{cursor:"pointer",}} className='avatar' /> 
-   {!UserProfile?.image   && <form onSubmit={submitImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
-        <input type="file" accept="image/*" onChange={onInputChange}></input>
-       {!isLoadingUpload && <button type="submit">Upload Image</button>}      </form>}
+    <Avatar alt={User?.fullname}  src={`${UserProfile?.image ||UserProfile?.data?.image}`} sx={{cursor:"pointer",}} className='avatar' /> 
 
-       {UserProfile?.image && <form onSubmit={UpadateImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
+   {UserProfile.Error    && <form onSubmit={submitImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
         <input type="file" accept="image/*" onChange={onInputChange}></input>
-       {!isLoadingUpload && <button type="submit">Update Image</button>}      </form>}
+       {!isLoadingUpload && isLoadingImage ? <button>Uploading....</button> : <button type="submit">Upload Image</button>   }      </form>}
+
+       {!UserProfile.Error && <form onSubmit={UpadateImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
+        <input type="file" accept="image/*" onChange={onInputChange}></input>
+       {!isLoadingUpload && isLoadingImage ? <button>Uploading.....</button> : <button type="submit">Update Image</button>}      </form>}
  <>
    
        {
