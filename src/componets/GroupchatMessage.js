@@ -17,7 +17,7 @@ function Messsage({isreadusermessage,content,timestamp,user,picture}) {
   
     }}>
       <div>
-        <Avatar alt={user} src={`${baseUrl}/${picture}`} />
+        <Avatar alt={user} src={`${picture}`} />
       </div>
 
      <div  className='messagecont'style={{  
