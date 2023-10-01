@@ -226,7 +226,7 @@ function scrollToTop() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-       <Avatar alt={User?.fullname} src={`${baseUrl}/${UserProfile?.image ||UserProfile?.data?.image}`} style={{width:"50px",height:"50px",objectFit:"contain"}}/> 
+       <Avatar alt={User?.fullname} src={`${UserProfile?.image ||UserProfile?.data?.image}`} style={{width:"50px",height:"50px",objectFit:"contain"}}/> 
       </Button>
       <Menu
         id="fade-menu"
