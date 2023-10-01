@@ -29,7 +29,7 @@ function AdminSetting() {
   const [UpadePassword,SetUpadatePassword]=useState(false)
   const [isLoadingUpadePassword,SetisLoadingtUpadatePassword]=useState(false)
   const [isLoadingUpload,SetisLoadingUpload]=useState(false)
-
+ const [IsUploadingimage,Setisuploadingimage] = useState(false)
 
   const[UpdateError,SetUpdateError]=useState("")
   
@@ -64,21 +64,27 @@ function AdminSetting() {
   };
 
   async function UPDATEfullname(){
-    SetisLoadingUpadateFullname(true)
-    const response =await PostRequest(`${baseUrl}/user/${User?._id}/fullname`,UFullname)
-    SetisLoadingUpadateFullname(false)
-    if(response?.Error){
-      return SetUpadateFullname(true), SetUpdateError(response)
-  }
-
-  localStorage.setItem("user",JSON.stringify(response))
-  SetUser(response)
-  SetUpdateError({messages:"Upate sucessfull"})
-  SetUpadateFullname(false)
+    try{
+      SetisLoadingUpadateFullname(true)
+      const response =await PostRequest(`${baseUrl}/user/${User?._id}/fullname`,UFullname)
+      SetisLoadingUpadateFullname(false)
+      if(response?.Error){
+        return SetUpadateFullname(true), SetUpdateError(response)
+    }
+  
+    localStorage.setItem("user",JSON.stringify(response))
+    SetUser(response)
+    SetUpdateError({messages:"Upate sucessfull"})
+    SetUpadateFullname(false)
+  
+    }catch(err){
+       return     SetUpadateFullname(true), SetUpdateError(err)
+    }
     SetUFullname('')
   }
  async function UPDATEemail(){
     SetisLoadingUpadateEmail(true)
+   try{
     const response= await PostRequest(`${baseUrl}/user/${User?._id}/email`,Uemail)
     SetisLoadingUpadateEmail(false)
     if(response?.Error){
@@ -91,9 +97,14 @@ function AdminSetting() {
 
   SetUpdateError({messages:"Update sucessfull"})
   SetUpadateEmail(false)
+   }catch(err){
+    SetUpdateError(err)
+    SetUpadateEmail(true)
+   }
     SetUemail('')
   }
 async  function UPDATEpassword(){
+   try{
     SetisLoadingtUpadatePassword(true)
     const response= await PostRequest(`${baseUrl}/user/${User?._id}/password`,Upassword)
     SetisLoadingtUpadatePassword(false)
@@ -106,14 +117,19 @@ async  function UPDATEpassword(){
   SetUser(response)
    SetUpdateError({messages:"Upate sucessfull"})
   SetUpadatePassword(false)
+   }catch(err){
+    SetUpdateError(err)
+    SetUpadatePassword(false)    
+   }
     SetUpassword('')
   }
 
 
   const submitImage = async (e) =>{
     localStorage.getItem("picture")
-    
-
+  try{
+       
+   Setisuploadingimage(true)
     e.preventDefault();
 
     const formData = new FormData();
@@ -127,7 +143,7 @@ async  function UPDATEpassword(){
       }
     )
   
-
+   
       //  const response =await PostRequest(`${baseUrl}/user/${User?._id}/profilepicture`,postImage)
     
     
@@ -135,9 +151,15 @@ async  function UPDATEpassword(){
         return  SetUpdateError(response)
      
        }
+       Setisuploadingimage(false)
        SetisLoadingUpload(false)
        localStorage.setItem("picture",JSON.stringify(response))
        SetUserProfile( response)
+
+  }catch(err){
+    SetUpdateError(err)
+    Setisuploadingimage(false)
+  }
   }
 
 
@@ -151,8 +173,9 @@ async  function UPDATEpassword(){
     localStorage.getItem("picture")
     
 
+  try{
     e.preventDefault();
-
+      Setisuploadingimage(true)
     const formData = new FormData();
     formData.append("image", image);
 
@@ -170,9 +193,14 @@ async  function UPDATEpassword(){
         return  SetUpdateError(response.message)
      
        }
+       Setisuploadingimage(false)
        SetisLoadingUpload(false)
        localStorage.setItem("picture",JSON.stringify(response))
        SetUserProfile( response)
+  }catch(err){
+    SetUpdateError(err)
+    Setisuploadingimage(false)
+  }
   }
   
   const onInputChange = (e) => {
@@ -201,13 +229,13 @@ async  function UPDATEpassword(){
     <div className='dest1' style={{backgroundColor:theme ==="light-theme" ? "#fff" :"#000", color:theme === "light-theme"? "#000" :"#fff"}}>
     <div className='des1i'>
     
-    <Avatar alt={User?.fullname}  src={`${baseUrl}/${UserProfile?.image ||UserProfile?.data?.image}`} sx={{cursor:"pointer",}} className='avatar' /> {!UserProfile && <form onSubmit={submitImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
+    <Avatar alt={User?.fullname}  src={`${UserProfile?.image ||UserProfile?.data?.image}`} sx={{cursor:"pointer",}} className='avatar' /> {UserProfile.Error && <form onSubmit={submitImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
         <input type="file" accept="image/*" onChange={onInputChange}></input>
-       {!isLoadingUpload && <button type="submit">Upload Image</button>}      </form>}
+       {IsUploadingimage ? <button>Uploading....</button> : <button type="submit">Upload Image</button>}      </form>}
 
-       {UserProfile && <form onSubmit={UpadateImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
+       {!UserProfile.Error && <form onSubmit={UpadateImage} style={{width:"100%",display:"flex",alignItems:"center",flexDirection:"column",gap:"20px"}}>
         <input type="file" accept="image/*" onChange={onInputChange}></input>
-       {!isLoadingUpload && <button type="submit">Update Image</button>}      </form>}
+       { IsUploadingimage ? <button>Uploading....</button> : <button type="submit">Update Image</button>}      </form>}
     </div>
     <div className='deslii'>
     {!UpadeFullname && <label>Name:{User?.fullname} </label>}
